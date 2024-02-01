@@ -38,17 +38,15 @@ public class Flight {
 	
 	public Flight() {}
 	
-	public Flight(int id, int departureAirportId, int arrivalAirportId, Timestamp departureDateTime, BigDecimal price) {
-		this.id = id;
+	public Flight(int departureAirportId, int arrivalAirportId, Timestamp departureDateTime, BigDecimal price) {
 		this.departureAirportId = departureAirportId;
 		this.arrivalAirportId = arrivalAirportId;
 		this.departureDateTime = departureDateTime;
 		this.price = price;
 	}
 	
-	public Flight(int id, int departureAirportId, int arrivalAirportId, Timestamp departureDateTime,
+	public Flight(int departureAirportId, int arrivalAirportId, Timestamp departureDateTime,
 			Timestamp returnDateTime, BigDecimal price) {
-		this.id = id;
 		this.departureAirportId = departureAirportId;
 		this.arrivalAirportId = arrivalAirportId;
 		this.departureDateTime = departureDateTime;

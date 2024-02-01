@@ -32,7 +32,7 @@ public class FlightDal implements IFlightDal{
 
 	@Override
 	@Transactional
-	public void addAirport(Flight flight) {
+	public void addFlight(Flight flight) {
 		Session session = entityManager.unwrap(Session.class);
 		session.persist(flight);
 		
@@ -40,7 +40,7 @@ public class FlightDal implements IFlightDal{
 
 	@Override
 	@Transactional
-	public void updateAirport(Flight flight) {
+	public void updateFlight(Flight flight) {
 		Session session = entityManager.unwrap(Session.class);
 		session.merge(flight);
 		
