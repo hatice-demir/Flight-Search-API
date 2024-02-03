@@ -39,6 +39,9 @@ public class SecurityConfig  {
         http.csrf().disable()
                 .authorizeRequests()
                 .requestMatchers("/rest/auth/**").permitAll()
+                .requestMatchers("/api/listflights/**").permitAll()
+                .requestMatchers("/api/roundTripFlights/**").permitAll()
+                .requestMatchers("/api/oneWayFlights/**").permitAll()
                 .anyRequest().authenticated()
                 .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().addFilterBefore(jwtAuthorizationFilter,UsernamePasswordAuthenticationFilter.class);
