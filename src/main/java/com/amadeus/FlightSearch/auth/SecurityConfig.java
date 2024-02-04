@@ -42,6 +42,8 @@ public class SecurityConfig  {
                 .requestMatchers("/api/listflights/**").permitAll()
                 .requestMatchers("/api/roundTripFlights/**").permitAll()
                 .requestMatchers("/api/oneWayFlights/**").permitAll()
+                .requestMatchers("/v3/api-docs/**").permitAll()
+                .requestMatchers("/swagger-ui/**").permitAll()
                 .anyRequest().authenticated()
                 .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().addFilterBefore(jwtAuthorizationFilter,UsernamePasswordAuthenticationFilter.class);

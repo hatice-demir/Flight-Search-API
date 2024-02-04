@@ -40,7 +40,7 @@ public class AuthController {
             User user = new User(userName,"", true);
             String token = jwtUtil.createToken(user);
             LoginRes loginRes = new LoginRes(userName,token);
-
+            System.out.println(loginRes.getToken());
             return ResponseEntity.ok(loginRes);
 
         }catch (BadCredentialsException e){
