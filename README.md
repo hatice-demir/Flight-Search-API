@@ -52,4 +52,4 @@ Set up a scheduled job that daily requests a mock third-party API to retrieve fl
 Create API documentation using Swagger.
 
 You can access the API through the following link: [http://localhost:8080/swagger-ui/index.html#/](http://localhost:8080/swagger-ui/index.html#/)
-You can provide authorization by using "John Doe" as the name and "password1" as the password.
+You can provide authorization by using "John Doe" as the name and "password1" as the password or another user from database.
