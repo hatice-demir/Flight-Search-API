@@ -46,6 +46,7 @@ Implement an authentication structure to verify user identity and grant authoriz
 ### Scheduled Background Jobs
 
 Set up a scheduled job that daily requests a mock third-party API to retrieve flight information and stores it in the database.
+You can provide authorization by using "John Doe" as the name and "password1" as the password.
 
 ### Documentation
 
