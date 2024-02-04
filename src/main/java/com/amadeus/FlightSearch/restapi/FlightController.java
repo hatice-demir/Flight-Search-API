@@ -26,7 +26,7 @@ public class FlightController {
 		this.flightService = flightService;
 	}
 	
-	@RequestMapping("/listflights")
+	@GetMapping("/listflights")
 	public List<Flight> getAllFlights() {
 		return flightService.getAllFlights();
 	}
@@ -50,23 +50,18 @@ public class FlightController {
 	public Flight getById(@PathVariable int id) {
 		return flightService.getById(id);
 	}
-	
-	@GetMapping("/oneWayFlights")
-    public List<Flight> getOneWayFlights(
-            @RequestParam String departureCity,
-            @RequestParam String arrivalCity,
-            @RequestParam Timestamp departureDateTime
-    ) {
-        return flightService.getOneWayFlights(departureCity, arrivalCity, departureDateTime);
-    }
 
-    @GetMapping("/roundTripFlights")
-    public List<Flight> getRoundTripFlights(
+    @GetMapping("/filterFlights")
+    public List<Flight> getFilterFlights(
             @RequestParam String departureCity,
             @RequestParam String arrivalCity,
             @RequestParam Timestamp departureDateTime,
-            @RequestParam Timestamp returnDateTime
+            @RequestParam(required = false) Timestamp returnDateTime
     ) {
-        return flightService.getRoundTripFlights(departureCity, arrivalCity, departureDateTime, returnDateTime);
+    	if(returnDateTime == null) {
+    		return flightService.getOneWayFlights(departureCity, arrivalCity, departureDateTime);
+    	} else {
+    		return flightService.getRoundTripFlights(departureCity, arrivalCity, departureDateTime, returnDateTime);
+    	}
     }
 }

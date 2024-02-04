@@ -24,7 +24,7 @@ public class AirportController {
 		this.airportService = airportService;
 	}
 	
-	@RequestMapping("/listairports")
+	@GetMapping("/listairports")
 	public List<Airport> getAllAirports() {
 		return airportService.getAllAirports();
 	}
